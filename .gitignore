@@ -31,6 +31,20 @@ output_*.pdf
 *.log
 dump.txt
 
+# Credentials, Secrets & Tokens (100% Protection)
+.env
+*.env
+.env.*
+secrets.*
+credentials.*
+*.pem
+*.key
+*.token
+
+# User input files & generated PDFs (prevent leaking user books)
+*.pdf
+!samples/*.pdf
+
 # Antigravity runtime state (keep skills tracked for deployment)
 .agents/*
 !.agents/skills/
