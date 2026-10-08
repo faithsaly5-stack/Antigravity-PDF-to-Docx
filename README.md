@@ -121,7 +121,7 @@ Prepare the environment by converting a PDF into optimized JPEGs, and then extra
 ### 📝 Phase 1: PDF to Image Conversion
 1. Identify the target .pdf file in the current working directory.
 2. Delete the folders page_cache and any previous test images if they exist.
-3. Run python scripts/pdf_to_cache.py (or create a script using pymupdf that renders each page to exactly 1050px width, quality=70, saving to page_cache/page_001.jpg, etc.).
+3. Run python scripts/pdf_to_cache.py.
 4. Wait until all images are successfully saved.
 
 ### 📝 Phase 2: Create Styling Reference
