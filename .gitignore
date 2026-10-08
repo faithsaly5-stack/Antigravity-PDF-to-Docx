@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OCR Pipeline Caches & Temp Files
+page_cache/
+temp_page.md
+
+# Output documents & test results
+output_*.docx
+output_*.pdf
+*.log
+dump.txt
+
+# Antigravity runtime state (keep skills tracked for deployment)
+.agents/*
+!.agents/skills/

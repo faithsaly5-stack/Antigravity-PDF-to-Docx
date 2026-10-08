@@ -1,0 +1,17 @@
+# Core Conversion Dependencies (Cross-Platform)
+python-docx>=1.1.0
+markdown-it-py>=3.0.0
+PyYAML>=6.0
+Pygments>=2.17.0
+latex2mathml>=3.77.0
+lxml>=5.1.0
+Pillow>=10.0.0
+requests>=2.31.0
+rich>=13.7.0
+pymupdf>=1.24.0
+
+# Windows GUI Application
+customtkinter>=5.2.0
+
+# Optional: Microsoft Word COM automation for TOC field update and PDF export (Windows only)
+pywin32>=306; sys_platform == 'win32'
