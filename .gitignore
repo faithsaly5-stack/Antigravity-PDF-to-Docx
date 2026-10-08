@@ -34,3 +34,4 @@ dump.txt
 # Antigravity runtime state (keep skills tracked for deployment)
 .agents/*
 !.agents/skills/
+!.agents/skills/**
