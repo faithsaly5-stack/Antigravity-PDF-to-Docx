@@ -110,7 +110,7 @@ python scripts/pdf_to_cache.py "book.pdf"
 ---
 
 ### Step 2: Run Prompt 1 (Generate Styling Reference)
-Send this prompt to your AI Agent (Google Antigravity, Claude, ChatGPT, or Cursor):
+Send this prompt to your AI Agent (Google Antigravity, Claude 3.7 Sonnet, GPT-4.5 / o3, Cursor, or DeepSeek):
 
 <details open>
 <summary><b>📋 Prompt 1: Template Markdown Generator (Click to Copy)</b></summary>
@@ -256,4 +256,4 @@ officecli validate templates/default_academic.docx
 
 This project is licensed under the **MIT License**. Free for personal, academic, and commercial use.
 <br/>
-Compatible with modern vision models (Gemini 1.5 Pro, Claude 3.5 Sonnet, GPT-4o).
+Compatible with state-of-the-art vision and multimodal models (Claude 3.7 Sonnet, Gemini 2.5 Pro / Flash, GPT-4.5, o3-mini, DeepSeek-V3/R1).

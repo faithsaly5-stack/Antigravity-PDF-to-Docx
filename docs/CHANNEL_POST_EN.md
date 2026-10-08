@@ -36,7 +36,7 @@ This repository includes a native workspace skill (`agentic-pdf-to-docx`):
    > *"/goal Convert textbook.pdf to Word and PDF"*
 4. The agent handles caching, autonomous OCR extraction, and compiles the final `.docx` and `.pdf` files automatically!
 
-Works with any AI agent (Claude, Cursor, ChatGPT) via the included step-by-step bilingual prompt guide.
+Works with any frontier AI agent & model (Claude 3.7 Sonnet, GPT-4.5, Gemini 2.5 Pro, Cursor, DeepSeek) via the included step-by-step bilingual prompt guide.
 
 ---
 

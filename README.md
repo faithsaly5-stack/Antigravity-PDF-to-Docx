@@ -110,7 +110,7 @@ python scripts/pdf_to_cache.py "book.pdf"
 ---
 
 ### گام ۲: ارسال پرامپت اول (ساخت الگوی مارک‌داون)
-پرامپت زیر را کپی کرده و به هوش مصنوعی (Google Antigravity، Claude، ChatGPT یا Cursor) بفرستید:
+پرامپت زیر را کپی کرده و به هوش مصنوعی (Google Antigravity، Claude 3.7 Sonnet، GPT-4.5 / o3، Cursor یا DeepSeek) بفرستید:
 
 <details open>
 <summary><b>📋 متن پرامپت شماره ۱ (کلیک برای کپی)</b></summary>
@@ -255,4 +255,4 @@ officecli validate templates/default_academic.docx
 
 این پروژه تحت مجوز **MIT** منتشر شده است. استفاده شخصی، دانشگاهی و تجاری از این پروژه آزاد است.
 <br/>
-سازگار با تمامی مدل‌های ویژن پیشرفته (Gemini 1.5 Pro, Claude 3.5 Sonnet, GPT-4o).
+سازگار با تمامی مدل‌های چندوجهی و ویژن نسل جدید (Claude 3.7 Sonnet, Gemini 2.5 Pro / Flash, GPT-4.5, o3-mini, DeepSeek-V3/R1).
