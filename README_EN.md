@@ -226,6 +226,9 @@ perfect markdown to docx/
 │   ├── Agentic_Bulk_OCR_Guide.md # Comprehensive bilingual guide for OCR prompts
 │   ├── CHANNEL_POST_FA.md   # Ready-to-publish Persian social announcement
 │   └── CHANNEL_POST_EN.md   # Ready-to-publish English social announcement
+├── scripts/                 # Automation & deployment scripts
+│   └── github_deployer.js   # 1-click GitHub deployment engine
+├── deploy_to_github.bat     # Windows 1-click push to GitHub launcher
 ├── Start_Markdown_Studio.bat# Windows batch launcher for GUI Studio
 ├── run_gui.py               # GUI launcher script
 ├── convert.py               # Root CLI launcher script
