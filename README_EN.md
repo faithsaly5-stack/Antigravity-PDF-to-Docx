@@ -116,16 +116,22 @@ Send this prompt to your AI Agent (Google Antigravity, Claude 3.7 Sonnet, ChatGP
 <summary><b>📋 Prompt 1: Template Markdown Generator (Click to Copy)</b></summary>
 
 ```text
-Inspect the first content page image from the cache (e.g., page_cache/page_001.jpg) and create a golden Markdown styling reference file named styling_reference.md.
+Prepare the environment by converting a PDF into optimized JPEGs, and then extract a single sample page to establish the ground-truth Markdown styling reference for a bulk OCR pipeline.
 
-Instructions:
-1. Extract all text, headings, math equations ($...$ and $$...$$), and tables from this image with maximum accuracy.
-2. Apply strict Markdown conventions:
-   - Proper heading hierarchy (# , ## ) with space after #
-   - Callout blocks (> [!NOTE] or > [!WARNING]) for boxed notes
-   - Bold text (**text**) for definitions and options
-   - Proper Markdown tables (| ... |)
-3. Save the result to styling_reference.md and request my review/approval.
+### 📝 Phase 1: PDF to Image Conversion
+1. Identify the target .pdf file in the current working directory.
+2. Delete the folders page_cache and any previous test images if they exist.
+3. Run python scripts/pdf_to_cache.py (or create a script using pymupdf that renders each page to exactly 1050px width, quality=70, saving to page_cache/page_001.jpg, etc.).
+4. Wait until all images are successfully saved.
+
+### 📝 Phase 2: Create Styling Reference
+5. Open the first representative page (e.g. page_cache/page_001.jpg).
+6. Transcribe the text with maximum accuracy, proper RTL/Persian alignment, LaTeX equations ($...$), and tables.
+7. Apply strict Markdown rules:
+   - Headings with proper levels (# , ## ) and a space after #.
+   - Callout blocks (> [!NOTE] or > ) for tips/warnings.
+   - Bold text (**text**) for terms and emphasis.
+8. Save this output into styling_reference.md and request confirmation from the user.
 ```
 </details>
 
@@ -142,16 +148,16 @@ Send this prompt to initiate the autonomous, zero-bloat loop:
 ```text
 /goal Resume the strict OCR text extraction of the pictures in the `page_cache` folder into `document.md` efficiently, without ANY image cropping or context bloat.
 
-Execution Steps:
-1. Use a terminal command (e.g., Get-Content document.md -Tail 20 on Windows or tail -n 20 on Linux) to inspect ONLY the end of document.md to identify the last processed page.
-2. Read styling_reference.md to adhere strictly to formatting rules.
-3. DO NOT load or read the full document.md into your context.
-4. Select the next sequential image from page_cache.
+### 📝 Execution Steps
+1. Use a terminal command (e.g., Get-Content document.md -Tail 20 or tail -n 20 document.md) to inspect ONLY the end of document.md to identify the last processed page.
+2. Read styling_reference.md to follow exact styling conventions.
+3. DO NOT load or read the full document.md into your context to prevent memory bloat.
+4. Select the VERY NEXT sequential image from the page_cache folder.
 5. Extract all text, equations, and tables accurately, formatting according to styling_reference.md.
 6. Write this output into temp_page.md.
 7. Run this Python terminal command to append the content:
    python -c "with open('temp_page.md', 'r', encoding='utf-8') as src, open('document.md', 'a', encoding='utf-8') as dst: dst.write('\n\n' + src.read().strip() + '\n'); print('Appended successfully')"
-8. Clear temp_page.md, reset contextual memory of the page, and loop until all pages are extracted.
+8. Clear temp_page.md, reset contextual memory of the current page, and loop back to Step 4 until all pages are extracted.
 ```
 </details>
 

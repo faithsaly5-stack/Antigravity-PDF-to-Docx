@@ -55,40 +55,40 @@
 
 ### 🟠 مسیر سوم: پرامپت‌های مستقیم برای هر هوش مصنوعی (Claude 3.7 Sonnet, GPT-4o / o1, Gemini 2.0 Flash / Pro, DeepSeek-R1, Cursor)
 
-#### 📝 پرامپت مرحله ۱ (آماده‌سازی کش و صفحه الگو):
+#### 📝 پرامپت مرحله ۱ (آماده‌سازی کش و صفحه الگو - انگلیسی جهت درک بهتر ایجنت):
 ```text
-محیط کار را با تبدیل فایل PDF به تصاویر JPEG بهینه‌سازی‌شده آماده کن و سپس یک صفحه نمونه را استخراج نما تا سند مرجع استایل مارک‌داون (styling_reference.md) برای استخراج دسته‌ای ایجاد شود.
+Prepare the environment by converting a PDF into optimized JPEGs, and then extract a single sample page to establish the ground-truth Markdown styling reference for a bulk OCR pipeline.
 
-### 📝 فاز ۱: تبدیل PDF به تصویر
-۱. فایل PDF هدف را در پوشه جاری شناسایی کن.
-۲. در صورت وجود پوشه‌های page_cache و کش‌های قبلی، آن‌ها را پاکسازی کن.
-۳. اسکریپت scripts/pdf_to_cache.py را اجرا کن (یا با pymupdf اسکریپتی بنویس که عرض هر صفحه را دقیقاً ۱۰۵۰ پیکسل با کیفیت ۷۰ بسازد و در page_cache ذخیره کند).
-۴. منتظر اتمام کامل استخراج تصاویر بمان.
+### 📝 Phase 1: PDF to Image Conversion
+1. Identify the target .pdf file in the current working directory.
+2. Delete the folders page_cache and any previous test images if they exist.
+3. Run python scripts/pdf_to_cache.py (or create a script using pymupdf that renders each page to exactly 1050px width, quality=70, saving to page_cache/page_001.jpg, etc.).
+4. Wait until all images are successfully saved.
 
-### 📝 فاز ۲: ساخت سند مرجع استایل (Styling Reference)
-۵. تصویر اولین صفحه اصلی (مثلاً page_cache/page_001.jpg) را باز کن.
-۶. متن را با دقت کامل، رعایت زبان فارسی راست‌به‌چپ، فرمول‌های ریاضی لاتین ($...$) و جداول استخراج کن.
-۷. فرمت‌بندی مارک‌داون استاندارد را با دقت اعمال کن:
-   - تیترها با (# ، ## ) همراه با فاصله بعد از هشتگ
-   - جعبه‌های نکته یا هشدار با (> [!NOTE] یا > )
-   - متون تاکیدی با بولد (**متن**)
-۸. خروجی را در فایلی به نام styling_reference.md ذخیره کن و به کاربر اعلام کن تا فرمت را تایید نماید.
+### 📝 Phase 2: Create Styling Reference
+5. Open the first representative page (e.g. page_cache/page_001.jpg).
+6. Transcribe the text with maximum accuracy, proper RTL/Persian alignment, LaTeX equations ($...$), and tables.
+7. Apply strict Markdown rules:
+   - Headings with proper levels (# , ## ) and a space after #.
+   - Callout blocks (> [!NOTE] or > ) for tips/warnings.
+   - Bold text (**text**) for terms and emphasis.
+8. Save this output into styling_reference.md and request confirmation from the user.
 ```
 
-#### 🚀 پرامپت مرحله ۲ (استخراج خودکار و بدون وقفه کل صفحات):
+#### 🚀 پرامپت مرحله ۲ (استخراج خودکار و بدون وقفه کل صفحات - انگلیسی):
 ```text
-/goal استخراج متن و تبدیل تصاویر پوشه page_cache به مارک‌داون را با رعایت دقیق سند مرجع و بدون برش تصاویر و بدون اشباع حافظه (Zero Context Bloat) ادامه بده.
+/goal Resume the strict OCR text extraction of the pictures in the `page_cache` folder into `document.md` efficiently, without ANY image cropping or context bloat.
 
-### 📝 مراحل اجرا:
-۱. با دستور ترمینال (مثلاً Get-Content document.md -Tail 20 در پاورشل یا tail در لینوکس) فقط انتهای فایل document.md را بخوان تا شماره آخرین صفحه پردازش‌شده را بدانی.
-۲. سند styling_reference.md را جهت رعایت دقیق سبک، فونت‌ها و هدینگ‌ها مطالعه کن.
-۳. به هیچ وجه کل فایل document.md را داخل حافظه لود نکن تا از کندی و اشباع توکن جلوگیری شود.
-۴. دقیقاً تصویر صفحه بعدی را از پوشه page_cache انتخاب کن.
-۵. تمام متن، فرمول‌ها و جداول تصویر را استخراج کرده و دقیقاً طبق styling_reference.md فرمت‌بندی کن.
-۶. خروجی این صفحه را موقتاً در فایلی به نام temp_page.md بنویس.
-۷. دستور زیر را در ترمینال اجرا کن تا متن به انتهای فایل اصلی الحاق شود:
-   python -c "with open('temp_page.md', 'r', encoding='utf-8') as src, open('document.md', 'a', encoding='utf-8') as dst: dst.write('\n\n' + src.read().strip() + '\n'); print('Page Appended')"
-۸. فایل temp_page.md را پاک کن، حافظه کانتکست صفحه جاری را خالی کن و بلافاصله به مرحله ۴ برای صفحه بعد برگرد تا تمام صفحات استخراج شوند.
+### 📝 Execution Steps
+1. Use a terminal command (e.g., Get-Content document.md -Tail 20 or tail -n 20 document.md) to inspect ONLY the end of document.md to identify the last processed page.
+2. Read styling_reference.md to follow exact styling conventions.
+3. DO NOT load or read the full document.md into your context to prevent memory bloat.
+4. Select the VERY NEXT sequential image from the page_cache folder.
+5. Extract all text, equations, and tables accurately, formatting according to styling_reference.md.
+6. Write this output into temp_page.md.
+7. Run this Python terminal command to append the content:
+   python -c "with open('temp_page.md', 'r', encoding='utf-8') as src, open('document.md', 'a', encoding='utf-8') as dst: dst.write('\n\n' + src.read().strip() + '\n'); print('Appended successfully')"
+8. Clear temp_page.md, reset contextual memory of the current page, and loop back to Step 4 until all pages are extracted.
 ```
 
 ---
