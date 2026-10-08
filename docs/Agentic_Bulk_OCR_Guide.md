@@ -9,7 +9,7 @@
 
 ## 🌟 چرا این روش بهترین راهکار موجود است؟ (Why This Method?)
 
-| مشکل متداول مدل‌های عادی بدون خط لوله ایجنتی (Claude, ChatGPT, Gemini, DeepSeek) | راهکار هوشمند این خط لوله (Our Agentic Pipeline) |
+| مشکل متداول مدل‌های عادی بدون خط لوله ایجنتی (Claude 5.5, GPT-6, Gemini 4, DeepSeek-V4) | راهکار هوشمند این خط لوله (Our Agentic Pipeline) |
 | :--- | :--- |
 | **اشباع حافظه (Context Bloat):** پس از ۱۵-۲۰ صفحه چت طولانی شده، هوش مصنوعی کند می‌شود یا متوقف می‌گردد. | **استخراج تک‌صفحه‌ای با الحاق پایتون:** متن در فایل موقت نوشته شده و با اسکریپت الحاق می‌شود؛ پنجره حافظه مدل همیشه ۱۰۰٪ سبک و سریع می‌ماند. |
 | **بهم‌ریختگی پرانتزها و فرمول‌ها:** در متن دوزبانه پرانتزها وارونه شده (`(Cl⁻)` -> `)Cl⁻(`) و علامت‌های منفی جابجا می‌شوند. | **موتور قطعه‌بندی هوشمند (`md2docx`):** فرمول‌ها، نمادهای شیمیایی و متون انگلیسی بدون `w:rtl` پردازش شده و هرگز وارونه نمی‌شوند. |
@@ -53,7 +53,7 @@
 
 ---
 
-### 🟠 مسیر سوم: پرامپت‌های مستقیم برای هر هوش مصنوعی (Claude 3.7 Sonnet, GPT-4o / o1, Gemini 2.0 Flash / Pro, DeepSeek-R1, Cursor)
+### 🟠 مسیر سوم: پرامپت‌های مستقیم برای هر هوش مصنوعی (Claude Sonnet 5.5, GPT-6 Astra / Sol, Gemini 4 Argon, DeepSeek-V4-Pro, Grok 4.7)
 
 #### 📝 پرامپت مرحله ۱ (آماده‌سازی کش و صفحه الگو - انگلیسی جهت درک بهتر ایجنت):
 ```text
@@ -137,7 +137,7 @@ Then execute **Prompt 2** in your AI agent to run the extraction loop.
 
 ---
 
-### 🟠 Method 3: Copy-Paste Prompts (For Any AI Agent: Claude 3.7 Sonnet, GPT-4o / o1, Gemini 2.0 Flash / Pro, DeepSeek-R1, Cursor)
+### 🟠 Method 3: Copy-Paste Prompts (For Any AI Agent: Claude Sonnet 5.5, GPT-6 Astra / Sol, Gemini 4 Argon, DeepSeek-V4-Pro, Grok 4.7)
 
 #### 📝 Prompt 1: Preparation & Styling Setup
 ```text
