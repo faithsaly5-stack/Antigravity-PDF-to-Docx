@@ -87,8 +87,8 @@ Prerequisite: **Python 3.10+**. Clone the repository and install dependencies:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/markdown-to-docx-studio.git
-cd markdown-to-docx-studio
+git clone https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx.git
+cd Antigravity-PDF-to-Docx
 
 # 2. Install dependencies
 pip install -r requirements.txt

@@ -41,6 +41,6 @@ Works with any frontier AI agent & model (Claude 3.7 Sonnet, GPT-4.5, Gemini 2.5
 ---
 
 🔗 **GitHub Repository (Code, Templates, GUI & Guide):**
-👉 [https://github.com/your-username/markdown-to-docx-studio](https://github.com/your-username/markdown-to-docx-studio)
+👉 [https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx](https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx)
 
 ⭐ Star the repo if you find it helpful!

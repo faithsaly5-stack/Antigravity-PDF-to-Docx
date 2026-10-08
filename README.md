@@ -87,8 +87,8 @@ flowchart LR
 
 ```bash
 # ۱. کلون کردن مخزن
-git clone https://github.com/your-username/markdown-to-docx-studio.git
-cd markdown-to-docx-studio
+git clone https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx.git
+cd Antigravity-PDF-to-Docx
 
 # ۲. نصب نیازمندی‌ها
 pip install -r requirements.txt

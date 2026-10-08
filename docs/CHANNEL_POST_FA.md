@@ -47,6 +47,6 @@
 ---
 
 🔗 **لینک گیت‌هاب پروژه (سورس کامل، قالب‌ها و راهنما):**
-👉 [https://github.com/your-username/markdown-to-docx-studio](https://github.com/your-username/markdown-to-docx-studio)
+👉 [https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx](https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx)
 
 ⭐ اگر براتون مفید بود، حتماً پروژه رو در گیت‌هاب Star کنید و برای دوستان و هم‌دانشگاهی‌هاتون بفرستید!

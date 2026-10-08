@@ -105,7 +105,7 @@ async function main() {
       const choice = (await prompt('گزینه مورد نظر (1 یا 2، اینتر برای پیش‌فرض 1): ')) || '1';
 
       if (choice === '1') {
-        const defaultName = 'markdown-to-docx-studio';
+        const defaultName = 'Antigravity-PDF-to-Docx';
         const repoName = (await prompt(`نام مخزن در گیت‌هاب [${defaultName}]: `)) || defaultName;
         const visibility = (await prompt('عمومی باشد یا خصوصی؟ public / private [public]: ')).toLowerCase() || 'public';
         const flag = visibility.startsWith('priv') ? '--private' : '--public';
@@ -122,7 +122,7 @@ async function main() {
     }
 
     if (!remoteUrl) {
-      console.log('\n  لطفاً آدرس مخزن گیت‌هاب را وارد نمایید (مثال: https://github.com/username/markdown-to-docx-studio.git):');
+      console.log('\n  لطفاً آدرس مخزن گیت‌هاب را وارد نمایید (مثال: https://github.com/faithsaly5-stack/Antigravity-PDF-to-Docx.git):');
       const input = await prompt('GitHub Repo URL: ');
       if (input) {
         remoteUrl = input;
