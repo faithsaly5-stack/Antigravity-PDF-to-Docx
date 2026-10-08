@@ -53,7 +53,7 @@
 
 ---
 
-### 🟠 مسیر سوم: پرامپت‌های مستقیم برای هر هوش مصنوعی (Claude 3.7 Sonnet, GPT-4.5 / o3, Gemini 2.5 Pro, Cursor, DeepSeek)
+### 🟠 مسیر سوم: پرامپت‌های مستقیم برای هر هوش مصنوعی (Claude 3.7 Sonnet, GPT-4o / o1, Gemini 2.0 Flash / Pro, DeepSeek-R1, Cursor)
 
 #### 📝 پرامپت مرحله ۱ (آماده‌سازی کش و صفحه الگو):
 ```text
@@ -137,7 +137,7 @@ Then execute **Prompt 2** in your AI agent to run the extraction loop.
 
 ---
 
-### 🟠 Method 3: Copy-Paste Prompts (For Any AI Agent: Claude 3.7 Sonnet, GPT-4.5 / o3, Gemini 2.5 Pro, Cursor, DeepSeek)
+### 🟠 Method 3: Copy-Paste Prompts (For Any AI Agent: Claude 3.7 Sonnet, GPT-4o / o1, Gemini 2.0 Flash / Pro, DeepSeek-R1, Cursor)
 
 #### 📝 Prompt 1: Preparation & Styling Setup
 ```text
